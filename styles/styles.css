@@ -1,0 +1,17 @@
+html {
+    font-size: 14px;
+}
+
+/* .sidebar-module-inset {
+    background-color: #0000FF;
+} */ 
+/* zasto sam ja mislio da mora sidebar da bude plav??? */
+
+.blog-masthead {
+    background-color: #b34848;
+}
+
+h1,h2,h3,h4,h5,h6,a,a:hover {
+    color: #b34848;
+}
+
