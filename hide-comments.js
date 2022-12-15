@@ -10,5 +10,4 @@ function hideComments(){  //Show Comments i Hide Comments implementacija
         commentsUl[0].style.display = "none";
         hideCommentsButton[0].innerText = "Show Comments";
     }
-    console.log(commentsUl);
 }
