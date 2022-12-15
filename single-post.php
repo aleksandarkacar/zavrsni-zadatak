@@ -34,8 +34,7 @@
             // echo '<pre>';
             // var_dump($post); 
             // echo '</pre>';
-        $sql2 = "SELECT author,text FROM comments WHERE post_id = {$_GET['post_id']}";
-        $comments = fetchData($connection,$sql2,true);
+
             // echo '<pre>';
             // var_dump($comments); 
             // echo '</pre>';
@@ -55,15 +54,9 @@
 
                     <p><?php echo($post['body']) ?></p>
                 </div><!-- /.blog-post -->
+                
+                <?php include('comments.php')?>
 
-                <ul> 
-                    <?php foreach ($comments as $comment) { ?>
-                    <li> 
-                    User <?php echo($comment['author']) ?> Says : <?php echo($comment['text']) ?>
-                    </li>
-                    <hr>
-                    <?php } ?>
-                </ul>
 
             </div><!-- /.blog-main -->
 
