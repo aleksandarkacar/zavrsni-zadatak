@@ -17,38 +17,38 @@ $comments = fetchData($connection,$sql2,true);
 
                 <ul name="comments-ul"> 
 
-                <?php 
+                    <?php 
 
-                if (isset($_GET["error"])) { 
+                    if (isset($_GET["error"])) { 
+                        
+                    ?>
+
+                        <div class="alert alert-danger" role="alert">
+                            Feilds cannot be empty!!!
+                        </div>
+
+                    <?php
                     
-                ?>
+                    }
 
-                    <div class="alert alert-danger" role="alert">
-                        Feilds cannot be empty!!!
-                    </div>
-
-                <?php
-                
-                }
-
-                ?>
+                    ?>
 
 
-                <form method="post" action="create-comment.php">
-                    <table>
-                        <tr>
-                            <td> Author: </td> 
-                            <td> <input id="author" name="author" type="text" > </td>
-                        </tr>
-                        <tr>
-                            <td> Comment: </td>
-                            <td> <textarea id="text" name="text" ></textarea> </td>
-                        </tr>
-                        <tr>
-                            <input id="post_id" name="post_id" type="hidden" value="<?php echo($post['id']) ?>">
-                            <td> <input type="submit" value="Submit"> </td>
-                        </tr>
-                    </table>
+                    <form method="post" action="create-comment.php">
+                        <table>
+                            <tr>
+                                <td> Author: </td> 
+                                <td> <input id="author" name="author" type="text" > </td>
+                            </tr>
+                            <tr>
+                                <td> Comment: </td>
+                                <td> <textarea id="text" name="text" ></textarea> </td>
+                            </tr>
+                            <tr>
+                                <input id="post_id" name="post_id" type="hidden" value="<?php echo($post['id']) ?>">
+                                <td> <input type="submit" value="Submit"> </td>
+                            </tr>
+                        </table>
 
                     <?php foreach ($comments as $comment) { ?>
                     <li> 
