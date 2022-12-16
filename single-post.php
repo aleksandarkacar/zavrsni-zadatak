@@ -24,7 +24,7 @@
 
 <?php  
     if (isset($_GET['post_id'])){
-        $sql = "SELECT id,title,body,created_at,author FROM posts WHERE id = {$_GET['post_id']}";
+        $sql = "SELECT p.id,p.title,p.body,p.user_id,p.created_at,u.First_Name,u.Last_Name FROM posts AS p INNER JOIN users as u ON p.user_id = u.id WHERE p.id = {$_GET['post_id']}";
         $post = fetchData($connection,$sql);
     }
             // echo '<pre>';
@@ -50,8 +50,7 @@
 
                 <div class="blog-post">
                     <h2 class="blog-post-title"><a href="single-post.php?post_id=<?php echo($post['id']) ?>"> <?php echo($post['title']) ?> </a></h2>
-                    <p class="blog-post-meta"><?php echo($post['created_at']) ?> by <a href="#"><?php echo($post['author']) ?></a>
-                    <!-- <a name="delete-post-button" href="remove-post.php?post_id=<?php echo($post["id"])?>" class="btn btn-default">Delete Post</a> -->
+                    <p class="blog-post-meta"><?php echo($post['created_at']) ?> by <a href="#"><?php echo($post['First_Name']." ".$post['Last_Name']) ?></a>
                     <button onclick="deletePost()" class="btn btn-default">Delete Post</button>
                     <script>
                      function deletePost() {

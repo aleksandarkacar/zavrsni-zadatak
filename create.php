@@ -42,8 +42,10 @@
         <form method="post" action="create-post.php">
                     <table>
                         <tr>
-                            <td> Author: </td> 
-                            <td> <input id="author" name="author" type="text" > </td>
+                            <td> FirstName: </td> 
+                            <td> <input id="First_Name" name="First_Name" type="text" > </td> 
+                            <td> LastName: </td>
+                            <td> <input id="Last_Name" name="Last_Name" type="text" > </td>
                         </tr>
                         <tr>
                             <td> Title: </td>
