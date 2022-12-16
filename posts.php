@@ -10,18 +10,9 @@
 
         <?php
 
-            $sql = "SELECT id,title,body,author,created_at FROM posts";
+            $sql = "SELECT id,title,body,author,created_at FROM posts ORDER BY created_at DESC";
             $statement = $connection->prepare($sql);
             $posts = fetchData($connection, $sql, true);
-
-            usort($posts, function ($first,$second) // Sortiranje po datumu kako je zadatak trazio
-                {
-                    if ($first["created_at"] < $second["created_at"]){
-                        return true;
-                    }
-                    return false;
-                }
-            );
 
             // echo '<pre>';
             // var_dump($posts); 

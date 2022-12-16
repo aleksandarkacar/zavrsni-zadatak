@@ -1,12 +1,12 @@
 <?php include_once('db.php') ?>
 <?php
 
-var_dump($_POST);
-echo $_POST['post_id'];
+// var_dump($_POST);
+// echo $_POST['post_id'];
 
 if( $_POST['author'] == "" ||  $_POST['text'] == "" )
 {
-    // header("Location: single-post.php?post_id=".$_POST['post_id']."&error=400"); exit;
+    header("Location: single-post.php?post_id=".$_POST['post_id']."&error=400"); exit;
 }
 else
 {
