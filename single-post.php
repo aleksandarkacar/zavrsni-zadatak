@@ -50,7 +50,21 @@
 
                 <div class="blog-post">
                     <h2 class="blog-post-title"><a href="single-post.php?post_id=<?php echo($post['id']) ?>"> <?php echo($post['title']) ?> </a></h2>
-                    <p class="blog-post-meta"><?php echo($post['created_at']) ?> by <a href="#"><?php echo($post['author']) ?></a></p>
+                    <p class="blog-post-meta"><?php echo($post['created_at']) ?> by <a href="#"><?php echo($post['author']) ?></a>
+                    <!-- <a name="delete-post-button" href="remove-post.php?post_id=<?php echo($post["id"])?>" class="btn btn-default">Delete Post</a> -->
+                    <button onclick="deletePost()" class="btn btn-default">Delete Post</button>
+                    <script>
+                     function deletePost() {
+                     var confirmation = confirm("Are you sure you want to delete this post?");
+                     console.log(confirmation);
+                     if (confirmation) {
+                        window.location.href = "remove-post.php?post_id=<?php echo($post["id"])?>";
+                        console.log("upaosam")
+                     }
+                     }
+                    </script>
+
+                    </p>
 
                     <p><?php echo($post['body']) ?></p>
                 </div><!-- /.blog-post -->
