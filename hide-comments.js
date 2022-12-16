@@ -1,7 +1,6 @@
 function hideComments(){  //Show Comments i Hide Comments implementacija
     commentsUl = document.getElementsByName("comments-ul");
     hideCommentsButton = document.getElementsByName("hide-comments-button");
-    console.log(hideCommentsButton);
 
     if (commentsUl[0].style.display === "none") {
         commentsUl[0].style.display = "block";
