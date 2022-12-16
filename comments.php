@@ -1,5 +1,5 @@
 <?php // Query za komentare
-$sql2 = "SELECT author,text FROM comments WHERE post_id = {$_GET['post_id']}";
+$sql2 = "SELECT author,text,id FROM comments WHERE post_id = {$_GET['post_id']}";
 $comments = fetchData($connection,$sql2,true);
 ?>
 
@@ -52,7 +52,8 @@ $comments = fetchData($connection,$sql2,true);
 
                     <?php foreach ($comments as $comment) { ?>
                     <li> 
-                    User <?php echo($comment['author']) ?> Says : <?php echo($comment['text']) ?>
+                    User <?php echo($comment['author']) ?> Says : <?php echo($comment['text']) ?> 
+                    <a name="delete-comment-button" href="remove-comment.php?comment_id=<?php echo($comment["id"])?>&post_id=<?php echo($_GET['post_id'])?>" class="btn btn-default">Delete comment</a>
                     </li>
                     <hr>
                     <?php } ?>
